@@ -1,4 +1,4 @@
-[@elizaos/core v0.1.7-alpha.1](../index.md) / Content
+[@elizaos/core v0.1.7-alpha.2](../index.md) / Content
 
 # Interface: Content
 

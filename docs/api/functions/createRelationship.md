@@ -1,4 +1,4 @@
-[@elizaos/core v0.1.7-alpha.1](../index.md) / createRelationship
+[@elizaos/core v0.1.7-alpha.2](../index.md) / createRelationship
 
 # Function: createRelationship()
 

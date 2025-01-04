@@ -1,4 +1,4 @@
-[@elizaos/core v0.1.7-alpha.1](../index.md) / Model
+[@elizaos/core v0.1.7-alpha.2](../index.md) / Model
 
 # Type Alias: Model
 
@@ -61,6 +61,12 @@ Stop sequences
 > **temperature**: `number`
 
 Temperature setting
+
+### settings.experimental\_telemetry?
+
+> `optional` **experimental\_telemetry**: [`TelemetrySettings`](TelemetrySettings.md)
+
+Optional telemetry configuration (experimental)
 
 ### imageSettings?
 
