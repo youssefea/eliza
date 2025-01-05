@@ -1,6 +1,5 @@
 import { API_PREFIX } from '../constants';
 import { RESTBase } from './rest-base';
-
 import { method } from './types/request-types';
 import { GetAPIKeyPermissionsResponse } from './types/dataAPI-types';
 
@@ -9,9 +8,14 @@ import { GetAPIKeyPermissionsResponse } from './types/dataAPI-types';
 export function getAPIKeyPermissions(
   this: RESTBase
 ): Promise<GetAPIKeyPermissionsResponse> {
-  return this.request({
-    method: method.GET,
-    endpoint: `${API_PREFIX}/key_permissions`,
-    isPublic: false,
-  });
+  try {
+    return this.request({
+      method: method.GET,
+      endpoint: `${API_PREFIX}/key_permissions`,
+      isPublic: false,
+    });
+  } catch (error) {
+    console.error('Error fetching API Key Permissions:', error);
+    throw error;
+  }
 }

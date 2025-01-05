@@ -14,11 +14,16 @@ export function getAccount(
   this: RESTBase,
   { accountUuid }: GetAccountRequest
 ): Promise<GetAccountResponse> {
-  return this.request({
-    method: method.GET,
-    endpoint: `${API_PREFIX}/accounts/${accountUuid}`,
-    isPublic: false,
-  });
+  try {
+    return this.request({
+      method: method.GET,
+      endpoint: `${API_PREFIX}/accounts/${accountUuid}`,
+      isPublic: false,
+    });
+  } catch (error) {
+    console.error('Error fetching account:', error);
+    throw error;
+  }
 }
 
 // [GET] List Accounts
@@ -27,10 +32,15 @@ export function listAccounts(
   this: RESTBase,
   requestParams: ListAccountsRequest
 ): Promise<ListAccountsResponse> {
-  return this.request({
-    method: method.GET,
-    endpoint: `${API_PREFIX}/accounts`,
-    queryParams: requestParams,
-    isPublic: false,
-  });
+  try {
+    return this.request({
+      method: method.GET,
+      endpoint: `${API_PREFIX}/accounts`,
+      queryParams: requestParams,
+      isPublic: false,
+    });
+  } catch (error) {
+    console.error('Error listing accounts:', error);
+    throw error;
+  }
 }

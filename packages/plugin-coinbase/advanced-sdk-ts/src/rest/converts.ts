@@ -16,12 +16,17 @@ export function createConvertQuote(
   this: RESTBase,
   requestParams: CreateConvertQuoteRequest
 ): Promise<CreateConvertQuoteResponse> {
-  return this.request({
-    method: method.POST,
-    endpoint: `${API_PREFIX}/convert/quote`,
-    bodyParams: requestParams,
-    isPublic: false,
-  });
+  try {
+    return this.request({
+      method: method.POST,
+      endpoint: `${API_PREFIX}/convert/quote`,
+      bodyParams: requestParams,
+      isPublic: false,
+    });
+  } catch (error) {
+    console.error('Error creating convert quote:', error);
+    throw error;
+  }
 }
 
 // [GET] Get Convert Trade
@@ -30,24 +35,34 @@ export function getConvertTrade(
   this: RESTBase,
   { tradeId, ...requestParams }: GetConvertTradeRequest
 ): Promise<GetConvertTradeResponse> {
-  return this.request({
-    method: method.GET,
-    endpoint: `${API_PREFIX}/convert/trade/${tradeId}`,
-    queryParams: requestParams,
-    isPublic: false,
-  });
+  try {
+    return this.request({
+      method: method.GET,
+      endpoint: `${API_PREFIX}/convert/trade/${tradeId}`,
+      queryParams: requestParams,
+      isPublic: false,
+    });
+  } catch (error) {
+    console.error('Error fetching convert trade:', error);
+    throw error;
+  }
 }
 
-// [POST] Commit Connvert Trade
+// [POST] Commit Convert Trade
 // https://docs.cdp.coinbase.com/advanced-trade/reference/retailbrokerageapi_commitconverttrade
 export function commitConvertTrade(
   this: RESTBase,
   { tradeId, ...requestParams }: CommitConvertTradeRequest
 ): Promise<CommitConvertTradeResponse> {
-  return this.request({
-    method: method.POST,
-    endpoint: `${API_PREFIX}/convert/trade/${tradeId}`,
-    bodyParams: requestParams,
-    isPublic: false,
-  });
+  try {
+    return this.request({
+      method: method.POST,
+      endpoint: `${API_PREFIX}/convert/trade/${tradeId}`,
+      bodyParams: requestParams,
+      isPublic: false,
+    });
+  } catch (error) {
+    console.error('Error committing convert trade:', error);
+    throw error;
+  }
 }
