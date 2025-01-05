@@ -1,1 +1,0 @@
-// Example content for the new feature implementation for issue #1844
