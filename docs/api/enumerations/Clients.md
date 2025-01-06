@@ -1,4 +1,4 @@
-[@elizaos/core v0.1.7-alpha.2](../index.md) / Clients
+[@elizaos/core v0.1.7](../index.md) / Clients
 
 # Enumeration: Clients
 
@@ -14,7 +14,7 @@ Available client platforms
 
 [packages/core/src/types.ts:620](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L620)
 
-***
+---
 
 ### DIRECT
 
@@ -24,7 +24,7 @@ Available client platforms
 
 [packages/core/src/types.ts:621](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L621)
 
-***
+---
 
 ### TWITTER
 
@@ -34,7 +34,7 @@ Available client platforms
 
 [packages/core/src/types.ts:622](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L622)
 
-***
+---
 
 ### TELEGRAM
 
@@ -44,7 +44,7 @@ Available client platforms
 
 [packages/core/src/types.ts:623](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L623)
 
-***
+---
 
 ### FARCASTER
 
@@ -54,7 +54,7 @@ Available client platforms
 
 [packages/core/src/types.ts:624](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L624)
 
-***
+---
 
 ### LENS
 
@@ -64,7 +64,7 @@ Available client platforms
 
 [packages/core/src/types.ts:625](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L625)
 
-***
+---
 
 ### AUTO
 
@@ -74,7 +74,7 @@ Available client platforms
 
 [packages/core/src/types.ts:626](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L626)
 
-***
+---
 
 ### SLACK
 

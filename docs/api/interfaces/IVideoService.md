@@ -1,4 +1,4 @@
-[@elizaos/core v0.1.7-alpha.2](../index.md) / IVideoService
+[@elizaos/core v0.1.7](../index.md) / IVideoService
 
 # Interface: IVideoService
 
@@ -50,7 +50,7 @@ Add abstract initialize method that must be implemented by derived classes
 
 [packages/core/src/types.ts:1095](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L1095)
 
-***
+---
 
 ### isVideoUrl()
 
@@ -68,7 +68,7 @@ Add abstract initialize method that must be implemented by derived classes
 
 [packages/core/src/types.ts:1204](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L1204)
 
-***
+---
 
 ### fetchVideoInfo()
 
@@ -86,7 +86,7 @@ Add abstract initialize method that must be implemented by derived classes
 
 [packages/core/src/types.ts:1205](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L1205)
 
-***
+---
 
 ### downloadVideo()
 
@@ -104,7 +104,7 @@ Add abstract initialize method that must be implemented by derived classes
 
 [packages/core/src/types.ts:1206](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L1206)
 
-***
+---
 
 ### processVideo()
 

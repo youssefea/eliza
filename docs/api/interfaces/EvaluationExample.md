@@ -1,4 +1,4 @@
-[@elizaos/core v0.1.7-alpha.2](../index.md) / EvaluationExample
+[@elizaos/core v0.1.7](../index.md) / EvaluationExample
 
 # Interface: EvaluationExample
 
@@ -16,7 +16,7 @@ Evaluation context
 
 [packages/core/src/types.ts:435](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L435)
 
-***
+---
 
 ### messages
 
@@ -28,7 +28,7 @@ Example messages
 
 [packages/core/src/types.ts:438](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L438)
 
-***
+---
 
 ### outcome
 

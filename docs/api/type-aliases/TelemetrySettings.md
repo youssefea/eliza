@@ -1,4 +1,4 @@
-[@elizaos/core v0.1.7-alpha.2](../index.md) / TelemetrySettings
+[@elizaos/core v0.1.7](../index.md) / TelemetrySettings
 
 # Type Alias: TelemetrySettings
 

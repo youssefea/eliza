@@ -1,4 +1,4 @@
-[@elizaos/core v0.1.7-alpha.2](../index.md) / generateObjectArray
+[@elizaos/core v0.1.7](../index.md) / generateObjectArray
 
 # Function: generateObjectArray()
 

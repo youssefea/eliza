@@ -1,4 +1,4 @@
-[@elizaos/core v0.1.7-alpha.2](../index.md) / updateGoal
+[@elizaos/core v0.1.7](../index.md) / updateGoal
 
 # Function: updateGoal()
 

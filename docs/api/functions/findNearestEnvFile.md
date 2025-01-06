@@ -1,21 +1,21 @@
-[@elizaos/core v0.1.7-alpha.2](../index.md) / findNearestEnvFile
+[@elizaos/core v0.1.7](../index.md) / findNearestEnvFile
 
 # Function: findNearestEnvFile()
 
-> **findNearestEnvFile**(`startDir`?): `any`
+> **findNearestEnvFile**(`startDir`?): `string`
 
 Recursively searches for a .env file starting from the current directory
 and moving up through parent directories (Node.js only)
 
 ## Parameters
 
-• **startDir?**: `any` = `...`
+• **startDir?**: `string` = `...`
 
 Starting directory for the search
 
 ## Returns
 
-`any`
+`string`
 
 Path to the nearest .env file or null if not found
 

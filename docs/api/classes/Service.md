@@ -1,4 +1,4 @@
-[@elizaos/core v0.1.7-alpha.2](../index.md) / Service
+[@elizaos/core v0.1.7](../index.md) / Service
 
 # Class: `abstract` Service
 
@@ -40,7 +40,7 @@
 
 [packages/core/src/types.ts:1079](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L1079)
 
-***
+---
 
 ### serviceType
 
@@ -64,7 +64,7 @@
 
 #### Type Parameters
 
-• **T** *extends* [`Service`](Service.md)
+• **T** _extends_ [`Service`](Service.md)
 
 #### Returns
 
@@ -74,7 +74,7 @@
 
 [packages/core/src/types.ts:1083](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L1083)
 
-***
+---
 
 ### initialize()
 

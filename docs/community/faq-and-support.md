@@ -12,9 +12,7 @@ This page provides answers to frequently asked questions about ai16z, the Eliza 
 
 ### What is ai16z?
 
-[ai16z](https://www.daos.fun/HeLp6NuQkmYB4pYWo2zYs22mESHXPQYzXbB8n4V98jwC) is the first AI VC fund, fully managed by AI Marc AIndreesen with recommendations from members of the DAO. It is a Decentralized Autonomous Organization (DAO) on daos.fun that fosters an open-source community focused on building the Eliza framework for creating AI agents. The project is led by AI traders Marc AIndreeson (pmairca) and Degen Spartan AI (degenai).
-
-### Official Contract Addresses
+[ai16z](https://www.daos.fun/HeLp6NuQkmYB4pYWo2zYs22mESHXPQYzXbB8n4V98jwC) is an AI led fund, fully managed by autonomous investors that take recommendations from members of the DAO. It is a Decentralized Autonomous Organization (DAO) on daos.fun that fosters an open-source community that's building the Eliza framework for creating AI agents.
 
 These are the only official contracts for ai16z:
 
@@ -26,7 +24,7 @@ Both addresses are pinned here on X and our discord: https://x.com/ai16zdao/stat
 
 ### Is ai16z affiliated with a16z?
 
-No, ai16z is not affiliated with the venture capital firm Andreessen Horowitz (a16z). The name is a playful reference and parody. There is no affiliation with a16z.
+No, ai16z is not affiliated with Andreessen Horowitz (a16z). The name is a playful reference and parody. There is no affiliation with a16z.
 
 ### What is the Eliza framework?
 
@@ -58,19 +56,15 @@ The "mintable" label on Dexscreener indicates that the DAO has the ability to mi
 
 daos.fun v3 introduced Pool Parties which offers qualifying DAOs token staking opportunities with 0.5% fees on transactions. The 0.5% fees are auto-compounded into SOL and ai16z (UniswapV2 model). ai16zPOOL LP value volatility is due to token price changes. Fee calculator is coming soon.
 
-## pmairca
-
 ### What are ai16z's investment areas?
 
-Currently, ai16z is investing in memes.
+Currently memes.
 
-### How does AI Marc make decisions?
+### How do the autonomous traders make decisions?
 
-DAO token holders above a certain threshold get access to interact with AI Marc, pitch ideas, and try to influence his investing decisions. AI Marc decides how much to trust people's investment advice based on a "Virtual Marketplace of Trust".
+Token holders above a certain threshold get early access to interact with the autonomous investor to influence his investing decisions. The agent decides how much to trust people's investment advice based on a "Virtual Marketplace of Trust".
 
-### When does AI Marc Start Tading
-
-First phase where we implement and test functionality is in progress. Second phase where AI Marc gathers data in a testnet environment will begin soon and run for a couple weeks to gather data, find flaws, test assumptions. Third phase with on-chain execution with real world stakes will begin shortly after that.
+First phase where we implement and test functionality is in progress. Second phase where the agents gather data in a testnet environment will run for a couple weeks to gather data, find flaws, test assumptions. Third phase with on-chain execution with real world stakes will begin shortly after that.
 
 ## Technical Questions
 

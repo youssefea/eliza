@@ -1,8 +1,8 @@
-[@elizaos/core v0.1.7-alpha.2](../index.md) / trimTokens
+[@elizaos/core v0.1.7](../index.md) / trimTokens
 
 # Function: trimTokens()
 
-> **trimTokens**(`context`, `maxTokens`, `runtime`): `Promise`\<`any`\>
+> **trimTokens**(`context`, `maxTokens`, `runtime`): `Promise`\<`string`\>
 
 Trims the provided text context to a specified token limit using a tokenizer model and type.
 
@@ -26,7 +26,7 @@ The runtime interface providing tokenizer settings.
 
 ## Returns
 
-`Promise`\<`any`\>
+`Promise`\<`string`\>
 
 A promise that resolves to the trimmed text.
 

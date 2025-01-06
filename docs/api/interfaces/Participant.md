@@ -1,4 +1,4 @@
-[@elizaos/core v0.1.7-alpha.2](../index.md) / Participant
+[@elizaos/core v0.1.7](../index.md) / Participant
 
 # Interface: Participant
 
@@ -16,7 +16,7 @@ Unique identifier
 
 [packages/core/src/types.ts:536](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L536)
 
-***
+---
 
 ### account
 

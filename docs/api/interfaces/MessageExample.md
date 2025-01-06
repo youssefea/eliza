@@ -1,4 +1,4 @@
-[@elizaos/core v0.1.7-alpha.2](../index.md) / MessageExample
+[@elizaos/core v0.1.7](../index.md) / MessageExample
 
 # Interface: MessageExample
 
@@ -16,7 +16,7 @@ Associated user
 
 [packages/core/src/types.ts:370](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L370)
 
-***
+---
 
 ### content
 

@@ -1,4 +1,4 @@
-[@elizaos/core v0.1.7-alpha.2](../index.md) / ActionResponse
+[@elizaos/core v0.1.7](../index.md) / ActionResponse
 
 # Interface: ActionResponse
 
@@ -12,7 +12,7 @@
 
 [packages/core/src/types.ts:1311](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L1311)
 
-***
+---
 
 ### retweet
 
@@ -22,7 +22,7 @@
 
 [packages/core/src/types.ts:1312](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L1312)
 
-***
+---
 
 ### quote?
 
@@ -32,7 +32,7 @@
 
 [packages/core/src/types.ts:1313](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L1313)
 
-***
+---
 
 ### reply?
 

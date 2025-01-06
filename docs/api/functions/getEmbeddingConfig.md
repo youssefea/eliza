@@ -1,4 +1,4 @@
-[@elizaos/core v0.1.7-alpha.2](../index.md) / getEmbeddingConfig
+[@elizaos/core v0.1.7](../index.md) / getEmbeddingConfig
 
 # Function: getEmbeddingConfig()
 

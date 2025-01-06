@@ -1,4 +1,4 @@
-[@elizaos/core v0.1.7-alpha.2](../index.md) / TokenizerType
+[@elizaos/core v0.1.7](../index.md) / TokenizerType
 
 # Enumeration: TokenizerType
 
@@ -12,7 +12,7 @@
 
 [packages/core/src/types.ts:1322](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L1322)
 
-***
+---
 
 ### TikToken
 

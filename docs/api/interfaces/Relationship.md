@@ -1,4 +1,4 @@
-[@elizaos/core v0.1.7-alpha.2](../index.md) / Relationship
+[@elizaos/core v0.1.7](../index.md) / Relationship
 
 # Interface: Relationship
 
@@ -16,7 +16,7 @@ Unique identifier
 
 [packages/core/src/types.ts:487](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L487)
 
-***
+---
 
 ### userA
 
@@ -28,7 +28,7 @@ First user ID
 
 [packages/core/src/types.ts:490](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L490)
 
-***
+---
 
 ### userB
 
@@ -40,7 +40,7 @@ Second user ID
 
 [packages/core/src/types.ts:493](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L493)
 
-***
+---
 
 ### userId
 
@@ -52,7 +52,7 @@ Primary user ID
 
 [packages/core/src/types.ts:496](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L496)
 
-***
+---
 
 ### roomId
 
@@ -64,7 +64,7 @@ Associated room ID
 
 [packages/core/src/types.ts:499](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L499)
 
-***
+---
 
 ### status
 
@@ -76,7 +76,7 @@ Relationship status
 
 [packages/core/src/types.ts:502](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L502)
 
-***
+---
 
 ### createdAt?
 

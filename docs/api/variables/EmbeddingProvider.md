@@ -1,4 +1,4 @@
-[@elizaos/core v0.1.7-alpha.2](../index.md) / EmbeddingProvider
+[@elizaos/core v0.1.7](../index.md) / EmbeddingProvider
 
 # Variable: EmbeddingProvider
 

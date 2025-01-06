@@ -1,8 +1,8 @@
-[@elizaos/core v0.1.7-alpha.2](../index.md) / EmbeddingProviderType
+[@elizaos/core v0.1.7](../index.md) / EmbeddingProviderType
 
 # Type Alias: EmbeddingProviderType
 
-> **EmbeddingProviderType**: *typeof* [`EmbeddingProvider`](../variables/EmbeddingProvider.md)\[keyof *typeof* [`EmbeddingProvider`](../variables/EmbeddingProvider.md)\]
+> **EmbeddingProviderType**: _typeof_ [`EmbeddingProvider`](../variables/EmbeddingProvider.md)\[keyof _typeof_ [`EmbeddingProvider`](../variables/EmbeddingProvider.md)\]
 
 ## Defined in
 

@@ -1,4 +1,4 @@
-[@elizaos/core v0.1.7-alpha.2](../index.md) / Evaluator
+[@elizaos/core v0.1.7](../index.md) / Evaluator
 
 # Interface: Evaluator
 
@@ -16,7 +16,7 @@ Whether to always run
 
 [packages/core/src/types.ts:449](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L449)
 
-***
+---
 
 ### description
 
@@ -28,7 +28,7 @@ Detailed description
 
 [packages/core/src/types.ts:452](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L452)
 
-***
+---
 
 ### similes
 
@@ -40,7 +40,7 @@ Similar evaluator descriptions
 
 [packages/core/src/types.ts:455](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L455)
 
-***
+---
 
 ### examples
 
@@ -52,7 +52,7 @@ Example evaluations
 
 [packages/core/src/types.ts:458](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L458)
 
-***
+---
 
 ### handler
 
@@ -64,7 +64,7 @@ Handler function
 
 [packages/core/src/types.ts:461](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L461)
 
-***
+---
 
 ### name
 
@@ -76,7 +76,7 @@ Evaluator name
 
 [packages/core/src/types.ts:464](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L464)
 
-***
+---
 
 ### validate
 

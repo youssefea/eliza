@@ -1,4 +1,4 @@
-[@elizaos/core v0.1.7-alpha.2](../index.md) / generateText
+[@elizaos/core v0.1.7](../index.md) / generateText
 
 # Function: generateText()
 
@@ -20,7 +20,7 @@ The context of the message to be completed.
 
 • **opts.modelClass**: `string`
 
-• **opts.tools?**: `Record`\<`string`, `CoreTool`\<`any`, `any`\>\> = `{}`
+• **opts.tools?**: `Record`\<`string`, `Tool`\> = `{}`
 
 • **opts.onStepFinish?**
 

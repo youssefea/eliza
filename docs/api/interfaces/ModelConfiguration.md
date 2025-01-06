@@ -1,4 +1,4 @@
-[@elizaos/core v0.1.7-alpha.2](../index.md) / ModelConfiguration
+[@elizaos/core v0.1.7](../index.md) / ModelConfiguration
 
 # Interface: ModelConfiguration
 
@@ -12,37 +12,37 @@
 
 [packages/core/src/types.ts:660](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L660)
 
-***
+---
 
-### max\_response\_length?
+### max_response_length?
 
-> `optional` **max\_response\_length**: `number`
+> `optional` **max_response_length**: `number`
 
 #### Defined in
 
 [packages/core/src/types.ts:661](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L661)
 
-***
+---
 
-### frequency\_penalty?
+### frequency_penalty?
 
-> `optional` **frequency\_penalty**: `number`
+> `optional` **frequency_penalty**: `number`
 
 #### Defined in
 
 [packages/core/src/types.ts:662](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L662)
 
-***
+---
 
-### presence\_penalty?
+### presence_penalty?
 
-> `optional` **presence\_penalty**: `number`
+> `optional` **presence_penalty**: `number`
 
 #### Defined in
 
 [packages/core/src/types.ts:663](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L663)
 
-***
+---
 
 ### maxInputTokens?
 
@@ -52,11 +52,11 @@
 
 [packages/core/src/types.ts:664](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L664)
 
-***
+---
 
-### experimental\_telemetry?
+### experimental_telemetry?
 
-> `optional` **experimental\_telemetry**: [`TelemetrySettings`](../type-aliases/TelemetrySettings.md)
+> `optional` **experimental_telemetry**: [`TelemetrySettings`](../type-aliases/TelemetrySettings.md)
 
 #### Defined in
 

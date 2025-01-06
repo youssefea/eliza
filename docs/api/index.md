@@ -1,4 +1,4 @@
-# @elizaos/core v0.1.7-alpha.2
+# @elizaos/core v0.1.7
 
 ## Enumerations
 

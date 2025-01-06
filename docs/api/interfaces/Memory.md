@@ -1,4 +1,4 @@
-[@elizaos/core v0.1.7-alpha.2](../index.md) / Memory
+[@elizaos/core v0.1.7](../index.md) / Memory
 
 # Interface: Memory
 
@@ -16,7 +16,7 @@ Optional unique identifier
 
 [packages/core/src/types.ts:338](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L338)
 
-***
+---
 
 ### userId
 
@@ -28,7 +28,7 @@ Associated user ID
 
 [packages/core/src/types.ts:341](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L341)
 
-***
+---
 
 ### agentId
 
@@ -40,7 +40,7 @@ Associated agent ID
 
 [packages/core/src/types.ts:344](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L344)
 
-***
+---
 
 ### createdAt?
 
@@ -52,7 +52,7 @@ Optional creation timestamp
 
 [packages/core/src/types.ts:347](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L347)
 
-***
+---
 
 ### content
 
@@ -64,7 +64,7 @@ Memory content
 
 [packages/core/src/types.ts:350](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L350)
 
-***
+---
 
 ### embedding?
 
@@ -76,7 +76,7 @@ Optional embedding vector
 
 [packages/core/src/types.ts:353](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L353)
 
-***
+---
 
 ### roomId
 
@@ -88,7 +88,7 @@ Associated room ID
 
 [packages/core/src/types.ts:356](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L356)
 
-***
+---
 
 ### unique?
 
@@ -100,7 +100,7 @@ Whether memory is unique
 
 [packages/core/src/types.ts:359](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L359)
 
-***
+---
 
 ### similarity?
 

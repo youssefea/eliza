@@ -1,4 +1,4 @@
-[@elizaos/core v0.1.7-alpha.2](../index.md) / State
+[@elizaos/core v0.1.7](../index.md) / State
 
 # Interface: State
 
@@ -6,7 +6,7 @@ Represents the current state/context of a conversation
 
 ## Indexable
 
- \[`key`: `string`\]: `unknown`
+\[`key`: `string`\]: `unknown`
 
 ## Properties
 
@@ -20,7 +20,7 @@ ID of user who sent current message
 
 [packages/core/src/types.ts:253](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L253)
 
-***
+---
 
 ### agentId?
 
@@ -32,7 +32,7 @@ ID of agent in conversation
 
 [packages/core/src/types.ts:256](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L256)
 
-***
+---
 
 ### bio
 
@@ -44,7 +44,7 @@ Agent's biography
 
 [packages/core/src/types.ts:259](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L259)
 
-***
+---
 
 ### lore
 
@@ -56,7 +56,7 @@ Agent's background lore
 
 [packages/core/src/types.ts:262](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L262)
 
-***
+---
 
 ### messageDirections
 
@@ -68,7 +68,7 @@ Message handling directions
 
 [packages/core/src/types.ts:265](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L265)
 
-***
+---
 
 ### postDirections
 
@@ -80,7 +80,7 @@ Post handling directions
 
 [packages/core/src/types.ts:268](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L268)
 
-***
+---
 
 ### roomId
 
@@ -92,7 +92,7 @@ Current room/conversation ID
 
 [packages/core/src/types.ts:271](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L271)
 
-***
+---
 
 ### agentName?
 
@@ -104,7 +104,7 @@ Optional agent name
 
 [packages/core/src/types.ts:274](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L274)
 
-***
+---
 
 ### senderName?
 
@@ -116,7 +116,7 @@ Optional message sender name
 
 [packages/core/src/types.ts:277](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L277)
 
-***
+---
 
 ### actors
 
@@ -128,7 +128,7 @@ String representation of conversation actors
 
 [packages/core/src/types.ts:280](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L280)
 
-***
+---
 
 ### actorsData?
 
@@ -140,7 +140,7 @@ Optional array of actor objects
 
 [packages/core/src/types.ts:283](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L283)
 
-***
+---
 
 ### goals?
 
@@ -152,7 +152,7 @@ Optional string representation of goals
 
 [packages/core/src/types.ts:286](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L286)
 
-***
+---
 
 ### goalsData?
 
@@ -164,7 +164,7 @@ Optional array of goal objects
 
 [packages/core/src/types.ts:289](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L289)
 
-***
+---
 
 ### recentMessages
 
@@ -176,7 +176,7 @@ Recent message history as string
 
 [packages/core/src/types.ts:292](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L292)
 
-***
+---
 
 ### recentMessagesData
 
@@ -188,7 +188,7 @@ Recent message objects
 
 [packages/core/src/types.ts:295](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L295)
 
-***
+---
 
 ### actionNames?
 
@@ -200,7 +200,7 @@ Optional valid action names
 
 [packages/core/src/types.ts:298](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L298)
 
-***
+---
 
 ### actions?
 
@@ -212,7 +212,7 @@ Optional action descriptions
 
 [packages/core/src/types.ts:301](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L301)
 
-***
+---
 
 ### actionsData?
 
@@ -224,7 +224,7 @@ Optional action objects
 
 [packages/core/src/types.ts:304](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L304)
 
-***
+---
 
 ### actionExamples?
 
@@ -236,7 +236,7 @@ Optional action examples
 
 [packages/core/src/types.ts:307](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L307)
 
-***
+---
 
 ### providers?
 
@@ -248,7 +248,7 @@ Optional provider descriptions
 
 [packages/core/src/types.ts:310](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L310)
 
-***
+---
 
 ### responseData?
 
@@ -260,7 +260,7 @@ Optional response content
 
 [packages/core/src/types.ts:313](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L313)
 
-***
+---
 
 ### recentInteractionsData?
 
@@ -272,7 +272,7 @@ Optional recent interaction objects
 
 [packages/core/src/types.ts:316](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L316)
 
-***
+---
 
 ### recentInteractions?
 
@@ -284,7 +284,7 @@ Optional recent interactions string
 
 [packages/core/src/types.ts:319](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L319)
 
-***
+---
 
 ### formattedConversation?
 
@@ -296,7 +296,7 @@ Optional formatted conversation
 
 [packages/core/src/types.ts:322](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L322)
 
-***
+---
 
 ### knowledge?
 
@@ -308,7 +308,7 @@ Optional formatted knowledge
 
 [packages/core/src/types.ts:325](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L325)
 
-***
+---
 
 ### knowledgeData?
 

@@ -1,4 +1,4 @@
-[@elizaos/core v0.1.7-alpha.2](../index.md) / ICacheManager
+[@elizaos/core v0.1.7](../index.md) / ICacheManager
 
 # Interface: ICacheManager
 
@@ -24,7 +24,7 @@
 
 [packages/core/src/types.ts:1071](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L1071)
 
-***
+---
 
 ### set()
 
@@ -50,7 +50,7 @@
 
 [packages/core/src/types.ts:1072](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L1072)
 
-***
+---
 
 ### delete()
 

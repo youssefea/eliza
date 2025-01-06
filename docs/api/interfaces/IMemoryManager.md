@@ -1,4 +1,4 @@
-[@elizaos/core v0.1.7-alpha.2](../index.md) / IMemoryManager
+[@elizaos/core v0.1.7](../index.md) / IMemoryManager
 
 # Interface: IMemoryManager
 
@@ -12,7 +12,7 @@
 
 [packages/core/src/types.ts:1021](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L1021)
 
-***
+---
 
 ### tableName
 
@@ -22,7 +22,7 @@
 
 [packages/core/src/types.ts:1022](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L1022)
 
-***
+---
 
 ### constructor
 
@@ -50,7 +50,7 @@
 
 [packages/core/src/types.ts:1025](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L1025)
 
-***
+---
 
 ### getMemories()
 
@@ -78,7 +78,7 @@
 
 [packages/core/src/types.ts:1027](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L1027)
 
-***
+---
 
 ### getCachedEmbeddings()
 
@@ -96,7 +96,7 @@
 
 [packages/core/src/types.ts:1035](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L1035)
 
-***
+---
 
 ### getMemoryById()
 
@@ -114,7 +114,7 @@
 
 [packages/core/src/types.ts:1039](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L1039)
 
-***
+---
 
 ### getMemoriesByRoomIds()
 
@@ -134,7 +134,7 @@
 
 [packages/core/src/types.ts:1040](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L1040)
 
-***
+---
 
 ### searchMemoriesByEmbedding()
 
@@ -146,7 +146,7 @@
 
 • **opts**
 
-• **opts.match\_threshold?**: `number`
+• **opts.match_threshold?**: `number`
 
 • **opts.count?**: `number`
 
@@ -162,7 +162,7 @@
 
 [packages/core/src/types.ts:1041](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L1041)
 
-***
+---
 
 ### createMemory()
 
@@ -182,7 +182,7 @@
 
 [packages/core/src/types.ts:1051](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L1051)
 
-***
+---
 
 ### removeMemory()
 
@@ -200,7 +200,7 @@
 
 [packages/core/src/types.ts:1053](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L1053)
 
-***
+---
 
 ### removeAllMemories()
 
@@ -218,7 +218,7 @@
 
 [packages/core/src/types.ts:1055](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L1055)
 
-***
+---
 
 ### countMemories()
 

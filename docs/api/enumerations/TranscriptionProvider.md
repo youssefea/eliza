@@ -1,4 +1,4 @@
-[@elizaos/core v0.1.7-alpha.2](../index.md) / TranscriptionProvider
+[@elizaos/core v0.1.7](../index.md) / TranscriptionProvider
 
 # Enumeration: TranscriptionProvider
 
@@ -12,7 +12,7 @@
 
 [packages/core/src/types.ts:1327](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L1327)
 
-***
+---
 
 ### Deepgram
 
@@ -22,7 +22,7 @@
 
 [packages/core/src/types.ts:1328](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L1328)
 
-***
+---
 
 ### Local
 

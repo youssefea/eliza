@@ -1,4 +1,4 @@
-[@elizaos/core v0.1.7-alpha.2](../index.md) / generateObjectDeprecated
+[@elizaos/core v0.1.7](../index.md) / generateObjectDeprecated
 
 # Function: generateObjectDeprecated()
 

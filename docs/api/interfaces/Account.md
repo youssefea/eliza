@@ -1,4 +1,4 @@
-[@elizaos/core v0.1.7-alpha.2](../index.md) / Account
+[@elizaos/core v0.1.7](../index.md) / Account
 
 # Interface: Account
 
@@ -16,7 +16,7 @@ Unique identifier
 
 [packages/core/src/types.ts:513](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L513)
 
-***
+---
 
 ### name
 
@@ -28,7 +28,7 @@ Display name
 
 [packages/core/src/types.ts:516](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L516)
 
-***
+---
 
 ### username
 
@@ -40,7 +40,7 @@ Username
 
 [packages/core/src/types.ts:519](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L519)
 
-***
+---
 
 ### details?
 
@@ -50,13 +50,13 @@ Optional additional details
 
 #### Index Signature
 
- \[`key`: `string`\]: `any`
+\[`key`: `string`\]: `any`
 
 #### Defined in
 
 [packages/core/src/types.ts:522](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L522)
 
-***
+---
 
 ### email?
 
@@ -68,7 +68,7 @@ Optional email
 
 [packages/core/src/types.ts:525](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L525)
 
-***
+---
 
 ### avatarUrl?
 

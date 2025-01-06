@@ -1,4 +1,4 @@
-[@elizaos/core v0.1.7-alpha.2](../index.md) / models
+[@elizaos/core v0.1.7](../index.md) / models
 
 # Variable: models
 

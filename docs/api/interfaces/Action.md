@@ -1,4 +1,4 @@
-[@elizaos/core v0.1.7-alpha.2](../index.md) / Action
+[@elizaos/core v0.1.7](../index.md) / Action
 
 # Interface: Action
 
@@ -16,7 +16,7 @@ Similar action descriptions
 
 [packages/core/src/types.ts:409](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L409)
 
-***
+---
 
 ### description
 
@@ -28,7 +28,7 @@ Detailed description
 
 [packages/core/src/types.ts:412](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L412)
 
-***
+---
 
 ### examples
 
@@ -40,7 +40,7 @@ Example usages
 
 [packages/core/src/types.ts:415](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L415)
 
-***
+---
 
 ### handler
 
@@ -52,7 +52,7 @@ Handler function
 
 [packages/core/src/types.ts:418](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L418)
 
-***
+---
 
 ### name
 
@@ -64,7 +64,7 @@ Action name
 
 [packages/core/src/types.ts:421](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L421)
 
-***
+---
 
 ### validate
 
@@ -76,7 +76,7 @@ Validation function
 
 [packages/core/src/types.ts:424](https://github.com/elizaOS/eliza/blob/main/packages/core/src/types.ts#L424)
 
-***
+---
 
 ### suppressInitialMessage?
 
