@@ -65,6 +65,7 @@ import { genLayerPlugin } from "@elizaos/plugin-genlayer";
 import { imageGenerationPlugin } from "@elizaos/plugin-image-generation";
 import { multiversxPlugin } from "@elizaos/plugin-multiversx";
 import { nearPlugin } from "@elizaos/plugin-near";
+import { nillionPlugin } from "@elizaos/plugin-nillion";
 import { nftGenerationPlugin } from "@elizaos/plugin-nft-generation";
 import { createNodePlugin } from "@elizaos/plugin-node";
 import { obsidianPlugin } from "@elizaos/plugin-obsidian";
@@ -732,6 +733,13 @@ export async function createAgent(
                 ? artheraPlugin
                 : null,
             getSecret(character, "ALLORA_API_KEY") ? alloraPlugin : null,
+            getSecret(character, "NILLION_NILDB_URLS") &&
+            getSecret(character, "NILLION_NILDB_NODE_IDS") &&
+            getSecret(character, "NILLION_NILDB_NODE_JWTS") &&
+            getSecret(character, "NILLION_NILDB_ORG_DID") &&
+            getSecret(character, "NILLION_NILDB_SCHEMA_ID")
+                ? nillionPlugin
+                : null,
         ].filter(Boolean),
         providers: [],
         actions: [],

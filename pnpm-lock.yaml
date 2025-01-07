@@ -250,6 +250,9 @@ importers:
       '@elizaos/plugin-nft-generation':
         specifier: workspace:*
         version: link:../packages/plugin-nft-generation
+      '@elizaos/plugin-nillion':
+        specifier: workspace:*
+        version: link:../packages/plugin-nillion
       '@elizaos/plugin-node':
         specifier: workspace:*
         version: link:../packages/plugin-node
@@ -1615,7 +1618,7 @@ importers:
         version: link:../core
       '@goat-sdk/adapter-vercel-ai':
         specifier: 0.2.0
-        version: 0.2.0(@goat-sdk/core@0.4.0)(ai@4.0.32(react@19.0.0)(zod@3.23.8))
+        version: 0.2.0(@goat-sdk/core@0.4.0)(ai@4.0.33(react@19.0.0)(zod@3.23.8))
       '@goat-sdk/core':
         specifier: 0.4.0
         version: 0.4.0
@@ -1874,6 +1877,22 @@ importers:
       whatwg-url:
         specifier: 7.1.0
         version: 7.1.0
+
+  packages/plugin-nillion:
+    dependencies:
+      '@elizaos/core':
+        specifier: workspace:*
+        version: link:../core
+      '@nillion/nilql':
+        specifier: 0.0.0-alpha.4
+        version: 0.0.0-alpha.4
+      zod:
+        specifier: 3.23.8
+        version: 3.23.8
+    devDependencies:
+      tsup:
+        specifier: 8.3.5
+        version: 8.3.5(@swc/core@1.10.7(@swc/helpers@0.5.15))(jiti@2.4.2)(postcss@8.4.49)(tsx@4.19.2)(typescript@5.7.3)(yaml@2.7.0)
 
   packages/plugin-node:
     dependencies:
@@ -6433,6 +6452,10 @@ packages:
     resolution: {integrity: sha512-NausMdekKJH58ssY/WjxkDYctHtLPqHUt1/ffZvqVp4SgcAH7Q5H7st782NJU+PZM85eNtcf5YbbVHbwDJgmOA==}
     engines: {node: '>=19.9.0'}
 
+  '@nillion/nilql@0.0.0-alpha.4':
+    resolution: {integrity: sha512-eZSKtPZGFFxEAeWp5zDzMk18ZnRCkJ5HxZmoKmphIJ4yZly4bOnlZml+yL6UzakE9a3IaP4VLHWpEn26v9FbXw==}
+    engines: {node: '>=23'}
+
   '@noble/curves@1.2.0':
     resolution: {integrity: sha512-oYclrNgRaM9SsBUBVbb8M6DTV7ZHRTKugureoYEncY5c65HOmRzvSiTE3y5CYaPYJA/GVkrhXEoF0M3Ya9PMnw==}
 
@@ -10083,8 +10106,8 @@ packages:
       zod:
         optional: true
 
-  ai@4.0.32:
-    resolution: {integrity: sha512-HgcOiTX31V7A+ejQsXFksKECuTAftW3e0gCTkh+oBICL9MjU2UM0qoc/dBP5XkKtLKWYyWyqpV+jcpPjlo6DUg==}
+  ai@4.0.33:
+    resolution: {integrity: sha512-mOvhPyVchGZvZuPn8Zj4J+93fZOlaBH1BtunvGmQ/8yFc5hGmid3c0XIdw5UNt3++0sXawKE3j7JUL5ZmiQdKg==}
     engines: {node: '>=18'}
     peerDependencies:
       react: ^18 || ^19 || ^19.0.0-rc
@@ -10622,6 +10645,10 @@ packages:
   bigint-buffer@1.1.5:
     resolution: {integrity: sha512-trfYco6AoZ+rKhKnxA0hgX0HAbVP/s808/EuDSe2JDzUnCp/xAsli35Orvk67UrTEcwuxZqYZDmfA2RXJgxVvA==}
     engines: {node: '>= 10.0.0'}
+
+  bigint-crypto-utils@3.3.0:
+    resolution: {integrity: sha512-jOTSb+drvEDxEq6OuUybOAv/xxoh3cuYRUIPyu8sSHQNKM303UQ2R1DAo45o1AkcIXw6fzbaFI1+xGGdaXs2lg==}
+    engines: {node: '>=14.0.0'}
 
   bignumber.js@9.1.2:
     resolution: {integrity: sha512-2/mKyZH9K85bzOEfhXDBFZTGd1CTs+5IHpeFQo9luiBG7hghdC851Pj2WAhb6E3R6b9tZj/XKhbg4fum+Kepug==}
@@ -16820,6 +16847,10 @@ packages:
     resolution: {integrity: sha512-+eK3G27SMwsB8kLIuj4h1FUhHtwiEUo21Tw8wNjmvdlpOEr613edv+8FUsTj/4F/VN5ywGE19X18N7CC2EJk6A==}
     engines: {node: ^16.14.0 || >=18.0.0}
     hasBin: true
+
+  paillier-bigint@3.4.3:
+    resolution: {integrity: sha512-82otV7H/gBiQeYjsmc/Zo029GoJDnAFyoMWQMsUgfya50W8dYRVgvUR/lHO0yrS7MfMwgE8fCeEIBF0IucLYFw==}
+    engines: {node: '>=12'}
 
   pako@0.2.9:
     resolution: {integrity: sha512-NUcwaKxUxWrZLpDG+z/xZaCgQITkA/Dv4V/T6bw7VON6l1Xz/VnrBqrYjZQ12TamKHzITTfOEIYUj48y2KXImA==}
@@ -26325,10 +26356,10 @@ snapshots:
       '@shikijs/types': 1.26.1
       '@shikijs/vscode-textmate': 10.0.1
 
-  '@goat-sdk/adapter-vercel-ai@0.2.0(@goat-sdk/core@0.4.0)(ai@4.0.32(react@19.0.0)(zod@3.23.8))':
+  '@goat-sdk/adapter-vercel-ai@0.2.0(@goat-sdk/core@0.4.0)(ai@4.0.33(react@19.0.0)(zod@3.23.8))':
     dependencies:
       '@goat-sdk/core': 0.4.0
-      ai: 4.0.32(react@19.0.0)(zod@3.23.8)
+      ai: 4.0.33(react@19.0.0)(zod@3.23.8)
       zod: 3.23.8
 
   '@goat-sdk/core@0.3.8(bufferutil@4.0.9)(encoding@0.1.13)(typescript@5.7.3)(utf-8-validate@5.0.10)':
@@ -28049,6 +28080,11 @@ snapshots:
       - typescript
       - utf-8-validate
       - zod
+
+  '@nillion/nilql@0.0.0-alpha.4':
+    dependencies:
+      libsodium-wrappers-sumo: 0.7.15
+      paillier-bigint: 3.4.3
 
   '@noble/curves@1.2.0':
     dependencies:
@@ -33479,7 +33515,7 @@ snapshots:
       - solid-js
       - vue
 
-  ai@4.0.32(react@19.0.0)(zod@3.23.8):
+  ai@4.0.33(react@19.0.0)(zod@3.23.8):
     dependencies:
       '@ai-sdk/provider': 1.0.4
       '@ai-sdk/provider-utils': 2.0.7(zod@3.23.8)
@@ -33492,7 +33528,7 @@ snapshots:
       react: 19.0.0
       zod: 3.23.8
 
-  ai@4.0.32(react@19.0.0)(zod@3.24.1):
+  ai@4.0.33(react@19.0.0)(zod@3.24.1):
     dependencies:
       '@ai-sdk/provider': 1.0.4
       '@ai-sdk/provider-utils': 2.0.7(zod@3.24.1)
@@ -34179,6 +34215,8 @@ snapshots:
   bigint-buffer@1.1.5:
     dependencies:
       bindings: 1.5.0
+
+  bigint-crypto-utils@3.3.0: {}
 
   bignumber.js@9.1.2: {}
 
@@ -42791,6 +42829,10 @@ snapshots:
       - bluebird
       - supports-color
 
+  paillier-bigint@3.4.3:
+    dependencies:
+      bigint-crypto-utils: 3.3.0
+
   pako@0.2.9: {}
 
   pako@1.0.11: {}
@@ -45551,7 +45593,7 @@ snapshots:
       '@solana/web3.js': 1.98.0(bufferutil@4.0.9)(encoding@0.1.13)(utf-8-validate@5.0.10)
       '@tensor-oss/tensorswap-sdk': 4.5.0(bufferutil@4.0.9)(encoding@0.1.13)(fastestsmallesttextencoderdecoder@1.0.22)(typescript@5.7.3)(utf-8-validate@5.0.10)
       '@tiplink/api': 0.3.1(bufferutil@4.0.9)(encoding@0.1.13)(fastestsmallesttextencoderdecoder@1.0.22)(sodium-native@3.4.1)(utf-8-validate@5.0.10)
-      ai: 4.0.32(react@19.0.0)(zod@3.24.1)
+      ai: 4.0.33(react@19.0.0)(zod@3.24.1)
       bn.js: 5.2.1
       bs58: 6.0.0
       chai: 5.1.2
