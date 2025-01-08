@@ -14,6 +14,7 @@ import {
     getEmbeddingConfig,
     DatabaseAdapter,
     EmbeddingProvider,
+    RAGKnowledgeItem
 } from "@elizaos/core";
 import fs from "fs";
 import { fileURLToPath } from "url";
@@ -1282,6 +1283,145 @@ export class PGLiteDatabaseAdapter
             }, "deleteCache")) ?? false
         );
     }
+    async getKnowledge(params: {
+        id?: UUID;
+        agentId: UUID;
+        limit?: number;
+        query?: string;
+    }): Promise<RAGKnowledgeItem[]> {
+        return this.withDatabase(async () => {
+            let sql = `SELECT * FROM knowledge WHERE ("agentId" = $1 OR "isShared" = true)`;
+            const values: unknown[] = [params.agentId];
+            let paramCount = 1;
+
+            if (params.id) {
+                paramCount++;
+                sql += ` AND id = $${paramCount}`;
+                values.push(params.id);
+            }
+
+            if (params.query) {
+                paramCount++;
+                sql += ` AND content->>'text' ILIKE $${paramCount}`;
+                values.push(`%${params.query}%`);
+            }
+
+            sql += ` ORDER BY "createdAt" DESC`;
+
+            if (params.limit) {
+                paramCount++;
+                sql += ` LIMIT $${paramCount}`;
+                values.push(params.limit);
+            }
+
+            const { rows } = await this.query<RAGKnowledgeItem>(sql, values);
+            return rows.map(row => ({
+                ...row,
+                content: typeof row.content === 'string' ? JSON.parse(row.content) : row.content,
+                embedding: row.embedding ? new Float32Array(row.embedding) : undefined,
+                createdAt: new Date(row.createdAt).getTime()
+            }));
+        }, "getKnowledge");
+    }
+
+    async searchKnowledge(params: {
+        agentId: UUID;
+        embedding: Float32Array;
+        match_threshold: number;
+        match_count: number;
+        searchText?: string;
+    }): Promise<RAGKnowledgeItem[]> {
+        return this.withDatabase(async () => {
+            const vectorStr = `[${Array.from(params.embedding).join(",")}]`;
+
+            const sql = `
+                WITH similarity_scores AS (
+                    SELECT
+                        k.*,
+                        1 - (k.embedding <-> $1::vector) as similarity,
+                        CASE
+                            WHEN k.content->>'text' ILIKE $3 THEN 2.0
+                            ELSE 1.0
+                        END as text_match_score
+                    FROM knowledge k
+                    WHERE (k."agentId" = $2 OR k."isShared" = true)
+                        AND k.embedding IS NOT NULL
+                )
+                SELECT *
+                FROM similarity_scores
+                WHERE (similarity >= $4 OR text_match_score > 1.0)
+                ORDER BY (similarity * text_match_score) DESC
+                LIMIT $5
+            `;
+
+            const { rows } = await this.query<RAGKnowledgeItem & { similarity: number }>(
+                sql,
+                [
+                    vectorStr,
+                    params.agentId,
+                    `%${params.searchText || ''}%`,
+                    params.match_threshold,
+                    params.match_count
+                ]
+            );
+
+            return rows.map(row => ({
+                id: row.id,
+                agentId: row.agentId,
+                content: typeof row.content === 'string' ? JSON.parse(row.content) : row.content,
+                embedding: row.embedding ? new Float32Array(row.embedding) : undefined,
+                createdAt: new Date(row.createdAt).getTime(),
+                similarity: row.similarity
+            }));
+        }, "searchKnowledge");
+    }
+
+    async createKnowledge(knowledge: RAGKnowledgeItem): Promise<void> {
+        return this.withDatabase(async () => {
+            const vectorStr = knowledge.embedding ?
+                `[${Array.from(knowledge.embedding).join(",")}]` : null;
+
+            await this.query(
+                `INSERT INTO knowledge (
+                    id,
+                    "agentId",
+                    content,
+                    embedding,
+                    "createdAt",
+                    "isShared"
+                ) VALUES ($1, $2, $3, $4, to_timestamp($5/1000.0), $6)
+                ON CONFLICT (id) DO UPDATE SET
+                    content = EXCLUDED.content,
+                    embedding = EXCLUDED.embedding,
+                    "isShared" = EXCLUDED."isShared"`,
+                [
+                    knowledge.id,
+                    knowledge.agentId,
+                    JSON.stringify(knowledge.content),
+                    vectorStr,
+                    knowledge.createdAt || Date.now(),
+                    knowledge.content.metadata?.isShared || false
+                ]
+            );
+        }, "createKnowledge");
+    }
+
+    async removeKnowledge(id: UUID): Promise<void> {
+        return this.withDatabase(async () => {
+            await this.query('DELETE FROM knowledge WHERE id = $1', [id]);
+        }, "removeKnowledge");
+    }
+
+    async clearKnowledge(agentId: UUID, includeShared = false): Promise<void> {
+        return this.withDatabase(async () => {
+            const sql = includeShared
+                ? 'DELETE FROM knowledge WHERE "agentId" = $1 OR "isShared" = true'
+                : 'DELETE FROM knowledge WHERE "agentId" = $1';
+
+            await this.query(sql, [agentId]);
+        }, "clearKnowledge");
+    }
+
 }
 
 export default PGLiteDatabaseAdapter;
