@@ -1314,7 +1314,7 @@ export class PGLiteDatabaseAdapter
                 values.push(params.limit);
             }
 
-            const { rows } = await this.query<RAGKnowledgeItem>(sql, values);
+            const { rows } = await this.query<any>(sql, values);
             return rows.map(row => ({
                 ...row,
                 content: typeof row.content === 'string' ? JSON.parse(row.content) : row.content,
@@ -1354,7 +1354,7 @@ export class PGLiteDatabaseAdapter
                 LIMIT $5
             `;
 
-            const { rows } = await this.query<RAGKnowledgeItem & { similarity: number }>(
+            const { rows } = await this.query<any>(
                 sql,
                 [
                     vectorStr,
