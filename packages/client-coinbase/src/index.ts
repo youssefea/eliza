@@ -7,6 +7,7 @@ import {
     HandlerCallback,
     stringToUuid
 } from "@elizaos/core";
+import { postTweet } from "@elizaos/plugin-twitter";
 import express from "express";
 import { WebhookEvent } from "./types";
 import { EventEmitter } from "events";
@@ -108,6 +109,17 @@ export class CoinbaseClient extends EventEmitter {
 
         const state = await this.runtime.composeState(memory);
         await this.runtime.processActions(memory, [memory], state, callback);
+
+        // Generate tweet content
+        const tweetContent = `🚀 I just bought ${event.event.toUpperCase()} for ${event.ticker}! Current price: $${event.price}. #Coinbase #Crypto`;
+
+        // Call postTweet
+        try {
+            await postTweet(tweetContent);
+            elizaLogger.info("Tweet posted successfully:", tweetContent);
+        } catch (error) {
+            elizaLogger.error("Failed to post tweet:", error);
+        }
     }
 
     async stop(): Promise<void> {
