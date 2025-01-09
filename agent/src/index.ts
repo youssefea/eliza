@@ -444,8 +444,6 @@ export async function initializeClients(
         clients.lens = lensClient;
     }
 
-    elizaLogger.log("client keys", Object.keys(clients));
-
     // TODO: Add Slack client to the list
     // Initialize clients as an object
 
@@ -484,6 +482,7 @@ export async function initializeClients(
             }
         }
     }
+    elizaLogger.log("client keys", Object.keys(clients));
 
     return clients;
 }
