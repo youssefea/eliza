@@ -3,6 +3,7 @@ import { SqliteDatabaseAdapter } from "@elizaos/adapter-sqlite";
 import { AutoClientInterface } from "@elizaos/client-auto";
 import { DiscordClientInterface } from "@elizaos/client-discord";
 import { FarcasterAgentClient } from "@elizaos/client-farcaster";
+import { CoinbaseAgentClient } from "@elizaos/client-coinbase";
 import { LensAgentClient } from "@elizaos/client-lens";
 import { SlackClientInterface } from "@elizaos/client-slack";
 import { TelegramClientInterface } from "@elizaos/client-telegram";
@@ -427,6 +428,16 @@ export async function initializeClients(
             clients.farcaster = farcasterClient;
         }
     }
+
+    if (clientTypes.includes(Clients.COINBASE)) {
+        // why is this one different :(
+        const coinbaseClient = new CoinbaseAgentClient(runtime);
+        if (coinbaseClient) {
+            coinbaseClient.start();
+            clients.coinbase = coinbaseClient;
+        }
+    }
+
     if (clientTypes.includes("lens")) {
         const lensClient = new LensAgentClient(runtime);
         lensClient.start();
