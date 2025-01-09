@@ -111,7 +111,17 @@ export class CoinbaseClient implements Client {
         await this.runtime.processActions(memory, [memory], state, callback);
 
         // Generate tweet content
-        const tweetContent = `🚀 ${event.event.toUpperCase()} for ${event.ticker}! Amount: $${amount}. Current price: $${event.price}. `;
+        const formattedTimestamp = new Intl.DateTimeFormat('en-US', {
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            timeZoneName: 'short'
+        }).format(new Date(event.timestamp));
+
+        const tweetContent = `🚀 ${event.event.toUpperCase()} for ${event.ticker}!
+Amount: $${amount}.
+Price: $${event.price}.
+Time: ${formattedTimestamp} 🌀`;
 
         try {
             elizaLogger.info("Tweet content:", tweetContent);
