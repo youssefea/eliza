@@ -10,15 +10,13 @@ import {
 import { postTweet } from "@elizaos/plugin-twitter";
 import express from "express";
 import { WebhookEvent } from "./types";
-import { EventEmitter } from "events";
 
-export class CoinbaseClient extends EventEmitter {
+export class CoinbaseClient implements Client {
     private runtime: IAgentRuntime;
     private server: express.Application;
     private port: number;
 
     constructor(runtime: IAgentRuntime) {
-        super();
 
         this.runtime = runtime;
         this.server = express();
@@ -81,19 +79,21 @@ export class CoinbaseClient extends EventEmitter {
         await this.runtime.ensureRoomExists(roomId);
         await this.runtime.ensureParticipantInRoom(this.runtime.agentId, roomId);
 
+        const amount = this.runtime.getSetting('COINBASE_TRADING_AMOUNT') ?? 1;
         const memory: Memory = {
             id: stringToUuid(`coinbase-${event.timestamp}`),
             userId: this.runtime.agentId,
             agentId: this.runtime.agentId,
             roomId,
             content: {
-                text: `Received ${event.event} signal for ${event.ticker} at price ${event.price}`,
+                text: `Place an advanced market order to ${event.event.toLowerCase()} $${amount} worth of ${event.ticker}`,
                 action: "EXECUTE_ADVANCED_TRADE",
                 source: "coinbase",
                 metadata: {
                     ticker: event.ticker,
                     side: event.event.toUpperCase(),
                     price: event.price,
+                    amount: amount,
                     timestamp: event.timestamp
                 }
             },
@@ -111,12 +111,12 @@ export class CoinbaseClient extends EventEmitter {
         await this.runtime.processActions(memory, [memory], state, callback);
 
         // Generate tweet content
-        const tweetContent = `🚀 I just bought ${event.event.toUpperCase()} for ${event.ticker}! Current price: $${event.price}. #Coinbase #Crypto`;
+        const tweetContent = `🚀 ${event.event.toUpperCase()} for ${event.ticker}! Amount: $${amount}. Current price: $${event.price}. `;
 
-        // Call postTweet
         try {
-            await postTweet(tweetContent);
-            elizaLogger.info("Tweet posted successfully:", tweetContent);
+            elizaLogger.info("Tweet content:", tweetContent);
+            const response = await postTweet(tweetContent);
+            elizaLogger.info("Tweet response:", response);
         } catch (error) {
             elizaLogger.error("Failed to post tweet:", error);
         }
