@@ -226,6 +226,7 @@ export type Models = {
     [ModelProviderName.NINETEEN_AI]: Model;
     [ModelProviderName.AKASH_CHAT_API]: Model;
     [ModelProviderName.LIVEPEER]: Model;
+    [ModelProviderName.INFERA]: Model;
 };
 
 /**

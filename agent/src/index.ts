@@ -31,7 +31,6 @@ import {
 } from "@elizaos/core";
 import { bootstrapPlugin } from "@elizaos/plugin-bootstrap";
 import { createNodePlugin } from "@elizaos/plugin-node";
-
 import Database from "better-sqlite3";
 import fs from "fs";
 import net from "net";
