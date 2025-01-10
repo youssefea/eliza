@@ -11,26 +11,26 @@ data in nilDB nodes, your data are secret shared in a way that none of the nodes
 can learn anything about your secrets. Then, when all the secret shares are
 combined, you can retrieve your original data.
 
+## Configuration
+
+To get started with nilDB read [our docs](https://nillion-docs-git-feat-fe-svsvd-nillion.vercel.app/build/secretVault-secretDataAnalytics/overview).
+
+To get credentials contact [Georgios Pentafragkas](mailto:georgios.pentafragkas@nillion.com).
+
+The plugin requires the following environment variables to be set:
+```bash
+NILLION_NILDB_ORG_DID=<Org_ID>
+NILLION_NILDB_SCHEMA_ID=<Schema_ID>
+NILLION_NILDB_NODE_URLS=<URL_1>,<URL_2>,<URL_3>
+NILLION_NILDB_NODE_IDS=<Node_ID_1>,<Node_ID_2>,<Node_ID_3>
+NILLION_NILDB_NODE_JWTS=<Node_JWT_1>,<Node_JWT_2>,<Node_JWT_3>
+```
+
 ## Installation
 
 ```bash
 pnpm install @elizaos/plugin-nillion
 ```
-
-## Configuration
-
-The plugin requires the following environment variables to be set:
-```bash
-NILLION_NILDB_URLS=<URL_1>,<URL_2>,<URL_3>
-NILLION_NILDB_NODE_IDS=<Node_ID_1>,<Node_ID_2>,<Node_ID_3>
-NILLION_NILDB_NODE_JWTS=<Node_JWT_1>,<Node_JWT_2>,<Node_JWT_3>
-NILLION_NILDB_ORG=<Org_ID>
-NILLION_NILDB_SCHEMA_ID=<Schema_ID>
-```
-
-To get started with Nillion's nilDB and get your own credentials, contact
-Georgios Pentafragkas at georgios.pentafragkas@nillion.com.
-
 
 ## Usage
 
@@ -39,7 +39,6 @@ Georgios Pentafragkas at georgios.pentafragkas@nillion.com.
 ```typescript
 import { nillionPlugin } from "@elizaos/plugin-nillion";
 ```
-
 
 ### Store Secret Example
 
@@ -58,9 +57,9 @@ import { nillionPlugin } from "@elizaos/plugin-nillion";
 // The plugin automatically handles secret retrieval when triggered
 // through natural language commands like:
 
-"Retrieve the secret from Nillion with id 123456789"
-"Download my secret with id 1230532 from nilDB"
-"Load the secret corresponding to id 9123122 from nillion's database"
+"Retrieve the secret from Nillion with id 59591970-f6d1-490f-839a-02a1e8ba2a3e"
+"Download my secret with id 59591970-f6d1-490f-839a-02a1e8ba2a3e from nilDB"
+"Load the secret corresponding to id 59591970-f6d1-490f-839a-02a1e8ba2a3e from nillion's database"
 ```
 
 ## API Reference
@@ -110,14 +109,12 @@ Retrieve secrets from Nillion's nilDB.
 - LOAD_FROM_NILLION
 - LOAD_FROM_NILDB
 
-
 **Input Content:**
 ```typescript
 interface RetrieveContent {
     id: string;
 }
 ```
-
 
 ## Common Issues & Troubleshooting
 
@@ -136,7 +133,6 @@ interface RetrieveContent {
    - Use secure environment variable management
    - Rotate private keys periodically
 
-
 ## Development Guide
 
 ### Setting Up Development Environment
@@ -144,21 +140,21 @@ interface RetrieveContent {
 1. Clone the repository
 2. Install dependencies:
 
-```bash
-pnpm install
-```
+    ```bash
+    pnpm install
+    ```
 
 3. Build the plugin:
 
-```bash
-pnpm run build
-```
+    ```bash
+    pnpm run build
+    ```
 
 4. Run the plugin:
 
-```bash
-pnpm run dev
-```
+    ```bash
+    pnpm run dev
+    ```
 
 ## Future Enhancements
 
@@ -173,13 +169,11 @@ Contributions are welcome! Please see the [CONTRIBUTING.md](CONTRIBUTING.md) fil
 ## Credits
 
 This plugin integrates with and builds upon several key technologies:
-- [Nillion's nilDB](https://nillion.com): Decentralized database
+- [Nillion's nilDB](https://nillion-docs-git-feat-fe-svsvd-nillion.vercel.app/build/secretVault-secretDataAnalytics/overview): Decentralized database
 
 Special thanks to:
-- The nilDB development team
-- The Eliza community for their contributions and feedback
+- The Eliza community for their contributions and feedback.
 
 ## License
 
 This plugin is part of the Eliza project. See the main project repository for license information.
-
