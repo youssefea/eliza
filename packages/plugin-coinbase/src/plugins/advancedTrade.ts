@@ -103,6 +103,27 @@ const tradeProvider: Provider = {
     },
 };
 
+export const pnlProvider: Provider = {
+    get: async (runtime: IAgentRuntime, _message: Memory) => {
+        const client = new RESTClient(
+            runtime.getSetting("COINBASE_API_KEY") ?? process.env.COINBASE_API_KEY,
+            runtime.getSetting("COINBASE_PRIVATE_KEY") ?? process.env.COINBASE_PRIVATE_KEY
+        );
+        const portfolioId = runtime.getSetting("COINBASE_PORTFOLIO_ID") ?? process.env.COINBASE_PORTFOLIO_ID;
+        if (!portfolioId) {
+            elizaLogger.error("Portfolio ID is not set");
+            return { realizedPnl: 0, unrealizedPnl: 0 };
+        }
+        client.getAccount
+        const balanceSummary= await client.getPerpetualsPortfolioSummary({portfolioUuid: portfolioId});
+        const portfolioBalances = balanceSummary?.summary;
+        elizaLogger.info("Balance Summary:", balanceSummary);
+        const unrealizedPnl = portfolioBalances?.unrealized_pnl || 0;
+        elizaLogger.info("Unrealized PNL:", unrealizedPnl);
+        return unrealizedPnl;
+    }
+}
+
 export async function appendTradeToCsv(tradeResult: any) {
     elizaLogger.debug("Starting appendTradeToCsv function");
     try {
@@ -184,6 +205,20 @@ async function hasEnoughBalance(
             side,
         });
         return false;
+    }
+}
+
+async function getPrice(client: RESTClient, productId: string) {
+    elizaLogger.debug("Fetching product info for productId:", productId);
+    try {
+        const productInfo = await client.getProduct({productId});
+        const price = JSON.parse(productInfo)?.price;
+        elizaLogger.info("Product info retrieved:", productInfo);
+        elizaLogger.info("Price:", price);
+        return Number(price);
+    } catch (error) {
+        elizaLogger.error("Error fetching product info:", error);
+        return null;
     }
 }
 
@@ -278,22 +313,28 @@ export const executeAdvancedTradeAction: Action = {
 
         const { productId, amount, side, orderType, limitPrice } =
             tradeDetails.object;
-
+        let amountInCurrency = amount;
         // Configure order
         let orderConfiguration: OrderConfiguration;
         elizaLogger.debug("Starting order configuration");
         try {
             if (orderType === "MARKET") {
+                const priceInUSD = await getPrice(client, productId);
+                elizaLogger.info("Price:", priceInUSD);
+                if (side === "SELL") {
+                    amountInCurrency = parseFloat(((1 / priceInUSD) * amountInCurrency).toFixed(7));
+                }
+                elizaLogger.info("Amount in currency:", amountInCurrency);
                 orderConfiguration =
                     side === "BUY"
                         ? {
                               market_market_ioc: {
-                                  quote_size: amount.toString(),
+                                  quote_size: amountInCurrency.toString(),
                               },
                           }
                         : {
                               market_market_ioc: {
-                                  base_size: amount.toString(),
+                                  base_size: amountInCurrency.toString(),
                               },
                           };
             } else {
@@ -334,7 +375,7 @@ export const executeAdvancedTradeAction: Action = {
                 !(await hasEnoughBalance(
                     client,
                     productId.split("-")[0],
-                    amount,
+                    amountInCurrency,
                     side
                 ))
             ) {
@@ -354,7 +395,22 @@ export const executeAdvancedTradeAction: Action = {
                 orderConfiguration,
             });
 
+            if (order.success) {
+            callback(
+                {
+                    text: `Trade executed successfully: ${order.order_id}`,
+                },
+                []
+            );
             elizaLogger.info("Trade executed successfully:", order);
+            } else {
+                callback(
+                    {
+                        text: `Failed to execute trade: ${(order as any)?.error_response?.message ?? "Unknown error occurred"}`,
+                    },
+                    []
+                );
+            }
         } catch (error) {
             elizaLogger.error("Trade execution failed:", error?.message);
             callback(
@@ -380,8 +436,8 @@ export const executeAdvancedTradeAction: Action = {
 - Product: ${productId}
 - Type: ${orderType} Order
 - Side: ${side}
-- Amount: ${amount}
-- ${orderType === "LIMIT" ? `- Limit Price: ${limitPrice}\n` : ""}- Order ID: ${order.order_id}
+- Amount: ${amountInCurrency}
+- ${orderType === "LIMIT" ? `- Limit Price: ${limitPrice}\n` : ""} Order ID: ${order.order_id}
 - Status: ${order.success}
 - Order Id:  ${order.order_id}
 - Response: ${JSON.stringify(order.response)}
@@ -396,6 +452,28 @@ export const executeAdvancedTradeAction: Action = {
                 user: "{{user1}}",
                 content: {
                     text: "Place an advanced market order to buy $1 worth of BTC",
+                },
+            },
+            {
+                user: "{{agentName}}",
+                content: {
+                    text: `Advanced Trade executed successfully:
+- Product: BTC-USD
+- Type: Market Order
+- Side: BUY
+- Amount: 1000
+- Order ID: CB-ADV-12345
+- Success: true
+- Response: {"success_response":{}}
+- Order Configuration: {"market_market_ioc":{"quote_size":"1000"}}`,
+                },
+            },
+        ],
+        [
+            {
+                user: "{{user1}}",
+                content: {
+                    text: "Place an advanced market order to sell $1 USD worth of BTC",
                 },
             },
             {

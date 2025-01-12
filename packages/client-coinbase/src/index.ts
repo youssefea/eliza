@@ -13,6 +13,7 @@ import {
 import { postTweet } from "@elizaos/plugin-twitter";
 import express from "express";
 import { WebhookEvent } from "./types";
+// import { pnlProvider } from "@elizaos/plugin-coinbase";
 
 export class CoinbaseClient implements Client {
     private runtime: IAgentRuntime;
@@ -196,13 +197,9 @@ Generate only the tweet text, no commentary or markdown.`;
         await this.runtime.messageManager.createMemory(memory);
 
         const callback: HandlerCallback = async (content: Content) => {
-            elizaLogger.info("Trade execution result:", content);
-            return [];
-        };
-
-        const state = await this.runtime.composeState(memory);
-        await this.runtime.processActions(memory, [memory], state, callback);
-
+            if (!content.text.includes("Trade executed successfully")) {
+                return [];
+            }
         // Generate tweet content
         const formattedTimestamp = new Intl.DateTimeFormat('en-US', {
             hour: '2-digit',
@@ -210,6 +207,18 @@ Generate only the tweet text, no commentary or markdown.`;
             second: '2-digit',
             timeZoneName: 'short'
         }).format(new Date(event.timestamp));
+
+//         const pnl = await pnlProvider.get(this.runtime, memory);
+
+
+//         const pnlText = pnl ? `Realized PNL: ${JSON.stringify(pnl.realizedPnl)}, Unrealized PNL: ${JSON.stringify(pnl.unrealizedPnl)}` : "";
+
+//         const tweetContent = `🚀 ${event.event.toUpperCase()} for ${event.ticker}!
+// Amount: $${amount}.
+// Price: $${event.price}.
+// Time: ${formattedTimestamp} 🌀
+// ${pnlText}
+// `;
 
         try {
             const tweetContent = await this.generateTweetContent(event, amount, formattedTimestamp);
@@ -219,6 +228,12 @@ Generate only the tweet text, no commentary or markdown.`;
         } catch (error) {
             elizaLogger.error("Failed to post tweet:", error);
         }
+            return [];
+        };
+
+        const state = await this.runtime.composeState(memory);
+        await this.runtime.processActions(memory, [memory], state, callback);
+
     }
 
     async stop(): Promise<void> {
