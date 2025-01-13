@@ -1,6 +1,7 @@
 import { getOnChainTools } from "@goat-sdk/adapter-vercel-ai";
 import { MODE, USDC, erc20 } from "@goat-sdk/plugin-erc20";
 import { kim } from "@goat-sdk/plugin-kim";
+import { superfluid } from "@goat-sdk/plugin-superfluid";
 import { sendETH } from "@goat-sdk/wallet-evm";
 import { WalletClientBase } from "@goat-sdk/core";
 
@@ -23,13 +24,26 @@ export async function getOnChainActions(wallet: WalletClientBase) {
             validate: async () => true,
             examples: [],
         },
+        {
+            name: "UPDATE_MEMBER_UNITS",
+            description:
+                "Update the units for a member in a Superfluid Distribution Pool",
+            similes: [],
+            validate: async () => true,
+            examples: [],
+        },
         // 1. Add your actions here
     ];
 
     const tools = await getOnChainTools({
         wallet: wallet,
         // 2. Configure the plugins you need to perform those actions
-        plugins: [sendETH(), erc20({ tokens: [USDC, MODE] }), kim()],
+        plugins: [
+            sendETH(),
+            erc20({ tokens: [USDC, MODE] }),
+            kim(),
+            superfluid(),
+        ],
     });
 
     // 3. Let GOAT handle all the actions
@@ -67,9 +81,9 @@ function getActionHandler(
                 tools,
                 maxSteps: 10,
                 // Uncomment to see the log each tool call when debugging
-                // onStepFinish: (step) => {
-                //     console.log(step.toolResults);
-                // },
+                onStepFinish: (step) => {
+                    console.log(step.toolResults);
+                },
                 modelClass: ModelClass.LARGE,
             });
 
